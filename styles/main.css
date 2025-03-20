@@ -1,0 +1,166 @@
+﻿* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+    body > form {
+        width: 100%;
+        height: 100%;
+    }
+
+#main {
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+#header, #footer {
+    flex-grow: 0;
+}
+
+#content {
+    flex-grow: 1;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+span.semi-transparent {
+    color: rgb(0 0 0 / 70%);
+}
+
+span.opaque {
+    color: rgb(0 0 0 / 100%);
+}
+
+.constrained {
+    /* Section which is max 800px wide and centred horizontally */
+    max-width: 800px;
+    margin: auto;
+    padding: 0 10px;
+}
+
+.fluid-flex {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--min-block-width, 200px), 1fr));
+    grid-column-gap: 30px;
+    grid-row-gap: 10px;
+}
+
+button, input[type=button], input[type=submit] {
+    font-size: 1em;
+    border: none;
+    background-color: var(--bg, #ddd);
+    box-shadow: inset 0 -1px 0 1px rgb(0 0 0 / 5%), inset 0 0 0 1px var(--border, transparent);
+    border-bottom: 1px solid rgb(0 0 0 / 20%);
+    font-weight: 600;
+    padding: 5px 7px;
+    cursor: pointer;
+    vertical-align: bottom;
+    display: inline-block;
+    text-align: center;
+    border-radius: 0px;
+}
+
+    button.small, input[type=submit].small, input[type=button].small {
+        font-size: 0.8em;
+        padding: 2px 3px;
+        --ring-width: 2px;
+    }
+
+    button.blue, input[type=submit].blue, input[type=button].blue {
+        --bg: #0064ff;
+        --border: rgb(0 0 0 / 30%);
+        --active-ring: #ffb100;
+        color: white;
+    }
+
+    button.red, input[type=submit].red, input[type=button].red {
+        --bg: orangered;
+        --active-ring: #555;
+        color: white;
+    }
+
+    button:active, input[type=button]:active, input[type=submit]:active {
+        box-shadow: inset 0 1px 0 1px rgb(0 0 0 / 0.5), inset 0 0 0 var(--ring-width, 4px) var(--active-ring, #2a6bff);
+        border-bottom: none;
+        border-top: 1px solid rgb(0 0 0 / 20%);
+    }
+
+input[type=text], input[type=password], input[type=number], select {
+    padding: 3px 6px;
+    font-size: 1em;
+}
+
+.validator {
+    color: orangered;
+    margin-bottom: 10px;
+    text-decoration: underline;
+    text-decoration-color: rgb(255 0 0 / 20%);
+    text-decoration-style: dotted;
+}
+
+.validator-big {
+    font-weight: 600;
+    color: orangered;
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: underline;
+    text-decoration-color: rgb(255 0 0 / 20%);
+    text-decoration-style: dotted;
+    text-underline-offset: 3px;
+    border: red solid 1px;
+    padding: 8px 14px;
+}
+
+    .validator-big::before {
+        content: '!';
+        display: inline-block;
+        padding: 0 9px;
+        margin-right: 5px;
+        color: white;
+        background: red;
+    }
+
+.validator-inline {
+    display: inline-block;
+    padding: 0 9px;
+    margin-right: 5px;
+    color: white;
+    background: red;
+}
+
+.dot {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgb(150 150 150 / 50%);
+    margin-right: 5px;
+}
+
+    .dot.blue {
+        background: #4190fc;
+    }
+
+.text-sm {
+    font-size: 0.8em;
+}
+
+button.tab, input.tab {
+    border:none;
+    border-bottom: 2px solid #999;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.tab.active {
+    background: #eee;
+    color: #0064ff;
+}

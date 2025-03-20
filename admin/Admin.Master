@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="SkyGardens.Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/admin.css" />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="main">
+            <div id="header">
+                <asp:ContentPlaceHolder ID="PageTitlePlaceholder" runat="server">
+                    <%-- Default value, if no title specified --%>
+                    SkyGardens Management System
+                </asp:ContentPlaceHolder>
+            </div>
+            <div id="content">
+                <asp:ContentPlaceHolder ID="MainContentPlaceholder" runat="server"></asp:ContentPlaceHolder>
+            </div>
+            <div id="footer">
+                <asp:Label runat="server" ID="lbl_authStatus"></asp:Label>
+                <asp:Button runat="server" ID="btn_logout" CssClass="small" Text="Logout" OnClick="btn_logout_Click" />
+            </div>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,15 @@
+﻿#header {
+    background: radial-gradient(ellipse at top center, #122b4b, black);
+    color: #fff;
+    padding: 150px 0 10px 0;
+}
+
+#footer {
+    background-color: #eee;
+    padding: 5px 8px;
+    font-size: 0.8em;
+
+    & > * {
+              margin: auto;
+          }
+}
